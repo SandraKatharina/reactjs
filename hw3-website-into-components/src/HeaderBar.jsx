@@ -1,3 +1,5 @@
+import MessageCount from "./MessageCount";
+
 function HeaderBar() {
   return (
     <header class="w-full bg-gray-100 border-b border-slate-400 h-16 flex items-center px-4 justify-between">
@@ -11,9 +13,7 @@ function HeaderBar() {
             fill-rule="evenodd"
           ></path>
         </svg>
-        <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
-          6
-        </span>
+        <MessageCount number={0}></MessageCount>
       </span>
     </header>
   );
