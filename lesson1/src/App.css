@@ -67,3 +67,14 @@
   object-fit: contain;
   border-radius: 30%;
 }
+
+#inputField {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  border-style: none;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+}
