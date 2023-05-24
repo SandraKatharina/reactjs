@@ -7,14 +7,17 @@ import FooterBar from "./FooterBar";
 import HeaderBar from "./HeaderBar";
 import MainContent from "./MainContent";
 import MenuAside from "./MenuAside";
+import { useState } from "react";
 
 function App() {
+  const [counter, setCounter] = useState(8);
+
   return (
     <main class="flex flex-col w-full h-full">
-      <HeaderBar></HeaderBar>
+      <HeaderBar counter={counter}></HeaderBar>
       <div class="flex h-full">
-        <MenuAside></MenuAside>
-        <MainContent></MainContent>
+        <MenuAside counter={counter} setCounter={setCounter}></MenuAside>
+        <MainContent name={""} counter={counter}></MainContent>
       </div>
       <FooterBar></FooterBar>
     </main>

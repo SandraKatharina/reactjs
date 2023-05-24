@@ -1,6 +1,6 @@
 import MessageCount from "./MessageCount";
 
-function HeaderBar() {
+function HeaderBar({ counter }) {
   return (
     <header class="w-full bg-gray-100 border-b border-slate-400 h-16 flex items-center px-4 justify-between">
       <div class="text-xl font-bold">My Component Page</div>
@@ -13,7 +13,7 @@ function HeaderBar() {
             fill-rule="evenodd"
           ></path>
         </svg>
-        <MessageCount number={0}></MessageCount>
+        <MessageCount counter={counter}></MessageCount>
       </span>
     </header>
   );
