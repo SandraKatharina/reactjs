@@ -10,14 +10,19 @@ import MenuAside from "./MenuAside";
 import { useState } from "react";
 
 function App() {
-  const [counter, setCounter] = useState(8);
+  const [counter, setCounter] = useState(1);
+  const [username, setUsername] = useState("");
 
   return (
-    <main class="flex flex-col w-full h-full">
-      <HeaderBar counter={counter}></HeaderBar>
-      <div class="flex h-full">
-        <MenuAside counter={counter} setCounter={setCounter}></MenuAside>
-        <MainContent name={""} counter={counter}></MainContent>
+    <main className="flex flex-col w-full h-full">
+      <HeaderBar
+        counter={counter}
+        setCounter={setCounter}
+        username={username}
+      ></HeaderBar>
+      <div className="flex h-full">
+        <MenuAside username={username} setUsername={setUsername}></MenuAside>
+        <MainContent counter={counter} username={username}></MainContent>
       </div>
       <FooterBar></FooterBar>
     </main>

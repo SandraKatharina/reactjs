@@ -1,7 +1,7 @@
 function FooterBar() {
   return (
-    <footer class="h-12 border-t border-slate-400 flex items-center px-4 text-sm text-slate-400">
-      by Dieter Developer (2022)
+    <footer className="h-12 flex items-center px-4 text-sm text-slate-400">
+      by Sandra Katharina (2023)
     </footer>
   );
 }

@@ -1,30 +1,28 @@
 import MenuItem from "./MenuItem";
 
-function MenuAside({ counter, setCounter }) {
-  const menuPoints = ["Home", "About", "Inbox", "Outbox", "Trash"];
-
-  const handleClickUp = () => {
-    setCounter(counter + 1);
-  };
-  const handleClickDown = () => {
-    if (counter > 0) {
-      setCounter(counter - 1);
-    }
-  };
+function MenuAside({ username, setUsername }) {
+  const menuPoints = ["HOME", "ABOUT", "INBOX", "OUTBOX", "TRASH"];
 
   return (
-    <aside class="w-1/4 h-full border-slate-400 border-r p-4">
-      <ul class="flex flex-col gap-2 font-semibold">
+    <aside className="w-1/4 h-full bg-purple-700 p-4">
+      <div className="mb-10">
+        <label htmlFor="username" className="text-neutral-50">
+          Login :{" "}
+        </label>
+        <input
+          name="username"
+          placeholder="MINNIE MOUSE"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          type="text"
+          className=" w-40 rounded-m"
+        />
+      </div>
+      <ul className="flex flex-col gap-2 font-semibold">
         {menuPoints.map((menuPoint) => (
           <MenuItem url={"http://localhost:5173/"} name={menuPoint} />
         ))}
-        {/* <MenuItems url={"http://localhost:5173/"} name={"Home"}></MenuItems>
-        <MenuItems url={"http://localhost:5173/"} name={"About"}></MenuItems>
-        <MenuItems url={"http://localhost:5173/"} name={"Inbox"}></MenuItems>
-        <MenuItems url={"http://localhost:5173/"} name={"Trash"}></MenuItems> */}
       </ul>
-      <button onClick={handleClickUp}>+</button>
-      <button onClick={handleClickDown}>-</button>
     </aside>
   );
 }

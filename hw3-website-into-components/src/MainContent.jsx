@@ -1,19 +1,7 @@
-function MainContent({ name, counter }) {
-  return (
-    <article class="p-4">
-      <p>{`Hello ${name || "Visitor"}`},</p>
-      <br />
+import ContentHome from "./ContentHome";
 
-      {counter > 0 ? (
-        <>
-          <p>{`You have ${counter || 0} unread messages.`}</p>
-          <p>Please go to your inbox to read them.</p>
-        </>
-      ) : (
-        <p>You have no new messages.</p>
-      )}
-    </article>
-  );
+function MainContent({ counter, username }) {
+  return <ContentHome counter={counter} username={username} />;
 }
 
 export default MainContent;
