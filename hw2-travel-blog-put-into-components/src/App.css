@@ -258,9 +258,9 @@ h2 {
   right: 0px;
 }
 
-#aside.hidden {
+/* #aside.hidden {
   right: -33vw;
-}
+} */
 #asideHeader {
   display: flex;
   flex-direction: row;

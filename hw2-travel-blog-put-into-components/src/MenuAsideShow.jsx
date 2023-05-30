@@ -1,8 +1,8 @@
 import MenuNav from "./MenuNav";
 
-function MenuAside() {
+function MenuAsideShow() {
   return (
-    <aside className="y-100">
+    <aside id="aside" className="">
       <header id="asideHeader">
         <div id="menu">
           <p>menu</p>
@@ -29,4 +29,4 @@ function MenuAside() {
   );
 }
 
-export default MenuAside;
+export default MenuAsideShow;

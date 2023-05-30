@@ -1,36 +1,32 @@
 import { useState } from "react";
 import "./App.css";
 import IntroSection from "./IntroSection";
-import MenuAside from "./MenuAside";
+import MenuAsideHide from "./MenuAsideHide";
 import FormsSection from "./FormsSection";
 import NavHeader from "./NavHeader";
 import SectionDivider from "./SectionDivider";
-import DestinationsContainer from "./DestinationsContainer";
+import DestinationsPreview from "./DestinationsPreview";
+import DestinationsDetails from "./DestinationsDetails";
 
-function App({ dividerName }) {
+function App({ dividerName, noDestDetails, showDestDetails }) {
   feather.replace();
+  const [destinationsDetails, setDestinationsDetails] = useState(false);
 
   return (
     <body>
       <main id="mainWrapper">
-        <NavHeader></NavHeader>
+        <NavHeader />
         <IntroSection />
-        <SectionDivider dividerName={"discover destinations"}></SectionDivider>
-        <DestinationsContainer></DestinationsContainer>
-        <SectionDivider
-          id="destinationDetails"
-          dividerName={"destinations details"}
-        ></SectionDivider>
-        <div className="destinationDetailContainer">
-          <div id="destinationsBox" className="detailBoxL"></div>
-          <div className="detailBoxL">
-            <div id="destinationsTitelBox" className="detailBoxS"></div>
-            <div id="weatherBox" className="detailBoxS"></div>
-          </div>
-        </div>
-        <FormsSection></FormsSection>
+        <SectionDivider dividerName={"discover destinations"} />
+        <DestinationsPreview />
+        <SectionDivider dividerName={"destinations details"} />
+        <DestinationsDetails
+          noDestDetails={destinationsDetails}
+          showDestDetails={setDestinationsDetails}
+        />
+        <FormsSection />
       </main>
-      <MenuAside></MenuAside>
+      <MenuAsideHide />
     </body>
   );
 }
