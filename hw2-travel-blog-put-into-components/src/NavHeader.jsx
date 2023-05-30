@@ -1,8 +1,18 @@
-function NavHeader() {
+import MenuAsideShow from "./MenuAsideShow";
+
+function NavHeader(menuHidden, menuShow) {
+  const buttonShowMenu = () => {
+    menuShow(<MenuAsideShow />);
+  };
+
   return (
     <header id="navigationHeader">
       <div>{/* <a href="">discover</a> */}</div>
-      <button id="buttonShowMenu" className="menuButton">
+      <button
+        onClick={buttonShowMenu}
+        id="buttonShowMenu"
+        className="menuButton"
+      >
         <svg
           viewBox="0 0 24 24"
           width="42"

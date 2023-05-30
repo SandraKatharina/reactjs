@@ -11,11 +11,12 @@ import DestinationsDetails from "./DestinationsDetails";
 function App({ dividerName, noDestDetails, showDestDetails }) {
   feather.replace();
   const [destinationsDetails, setDestinationsDetails] = useState(false);
+  const [menuAsidePos, setMenuAsidePos] = useState(<MenuAsideHide />);
 
   return (
     <body>
       <main id="mainWrapper">
-        <NavHeader />
+        <NavHeader menuHidden={menuAsidePos} menuShow={setMenuAsidePos} />
         <IntroSection />
         <SectionDivider dividerName={"discover destinations"} />
         <DestinationsPreview />
