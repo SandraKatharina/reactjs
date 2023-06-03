@@ -13,6 +13,7 @@ function App({ dividerName }) {
 
   const [temperature, setTemperature] = useState();
   const [cities, setCities] = useState([]);
+  const [destinations, setDestinations] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -22,12 +23,18 @@ function App({ dividerName }) {
       .then((value) => setTemperature(value.hourly.temperature_2m[0]));
   }, []);
 
+  useEffect(() => {
+    fetch("/destinations.json")
+      .then((data) => data.json())
+      .then((destinations) => setDestinations(destinations));
+  }, []);
+
   return (
     <main id="mainWrapper">
       <NavHeader />
       <IntroSection />
       <SectionDivider dividerName={"discover destinations"} />
-      <DestinationsPreview />
+      <DestinationsPreview destinations={destinations} />
       <SectionDivider dividerName={"destinations details"} />
       <Route path="/destinations/:cityId">
         {(params) => {
