@@ -1,19 +1,30 @@
 import MenuNav from "./MenuNav";
 
-function MenuAside() {
+function MenuAside({ showMenu, setShowMenu }) {
   return (
-    <aside className="y-100">
+    <aside id="aside" className={`${showMenu ? "block" : "hidden"}`}>
       <header id="asideHeader">
         <div id="menu">
           <p>menu</p>
         </div>
-        <button id="buttonHideMenu" className="menuButton">
+        <button
+          onClick={() => {
+            setShowMenu(!showMenu);
+          }}
+          id="buttonHideMenu"
+          className="menuButton"
+        >
+          {/* <img
+            className="w-42 h-42 text-neutral-950  hover:text-fuchsia-500"
+            src="/x.svg"
+            alt=""
+          /> */}
           <svg
             viewBox="0 0 24 24"
             width="42"
             height="42"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"

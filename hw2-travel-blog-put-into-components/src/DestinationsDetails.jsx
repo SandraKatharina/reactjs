@@ -1,13 +1,15 @@
-import DestinationsContainer from "./DestinationsContainer";
+import { Route } from "wouter";
 
-function DestinationsDetails() {
-  return <DestinationsContainer />;
-  //   <div className="destinationDetailContainer">
-  //   <div id="destinationsBox" className="detailBoxL"></div>
-  //   <div className="detailBoxL">
-  //     <div id="destinationsTitelBox" className="detailBoxS"></div>
-  //     <div id="weatherBox" className="detailBoxS"></div>
-  //   </div>
-  // </div>;
+function DestinationsDetails({ temperature }) {
+  return (
+    <div>
+      <Route path="/destination/:cityId">
+        {(params) => {
+          return <h1>This is more info about {params.city}</h1>;
+        }}
+      </Route>
+      <h1>The current temperature in Paris is: {temperature}</h1>
+    </div>
+  );
 }
 export default DestinationsDetails;

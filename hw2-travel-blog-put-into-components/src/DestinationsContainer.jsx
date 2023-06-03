@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import ButtonDestinationsDetail from "./ButtonDestinationsDetail";
 
 function DestinationsContainer() {
@@ -35,12 +36,10 @@ function DestinationsContainer() {
           key={destination.id}
           datacity={`${destinations.location}`}
         >
-          <a href="http://127.0.0.1:5500/travel-blog/index.html#destinationDetails">
+          <Link href={"/destination/" + destination.id}>
             <img src={`${destination.imageSrc}`} />
-          </a>
-          <a href="http://127.0.0.1:5500/travel-blog/index.html#destinationDetails">
             <h1>{`${destination.location}`}</h1>
-          </a>
+          </Link>
           <div className="flex flex-row">
             <p className="line-clamp-2 text-sm">
               {`${destination.description}`}{" "}
